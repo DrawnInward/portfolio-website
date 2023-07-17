@@ -1,12 +1,18 @@
-import ModeToggle from "./components/ModeToggle";
+
 import Nav from "./components/Nav";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Homepage from "./routes/Homepage";
 
 function App() {
   return (
-    <>
-      <ModeToggle />
+    <Router>
+        <main className="bg-appGreen">
       <Nav />
-    </>
+        <Routes>
+          <Route path="/" element={<Homepage/>}/>
+      </Routes>
+      </main>
+    </Router>
   );
 }
 
