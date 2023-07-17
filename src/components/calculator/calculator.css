@@ -1,0 +1,129 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  /*   max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+   */
+}
+
+.mainPage {
+  background-color: slategray;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.calculatorContainer {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgb(63, 63, 63);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 37px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.calculatorDisplay {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-left: 7px;
+  margin-right: 7px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border-width: 20px;
+  border-color: forestgreen;
+  background-color: red;
+}
+
+.calculatorDisplay input {
+  border-radius: 13px;
+  font-size: 35px;
+  width: 250px;
+  padding-left: 10px;
+  color: black;
+}
+
+.calculatorGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 75px);
+  grid-gap: 5px;
+}
+
+.calculatorButton {
+  width: 75px;
+  height: 75px;
+  font-size: 25px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  color: black;
+  cursor: pointer;
+  outline: none;
+}
+
+.calculatorButton:hover {
+  background-color: #e0e0e0;
+}
+
+.calculatorButton:active {
+  background-color: #ccc;
+}
+
+#cancelButton {
+  background-color: red;
+  font-size: 35px;
+  font-weight: 500;
+  color: white;
+}
+
+#equalsButton {
+  background-color: green;
+  font-size: 50px;
+  font-weight: 500;
+  color: white;
+  padding-bottom: 5px;
+}
+
+#plusButton {
+  background-color: rgb(68, 115, 202);
+  font-size: 35px;
+  font-weight: 500;
+  color: white;
+}
+
+#bigOperatorButton {
+  background-color: rgb(68, 115, 202);
+  font-size: 35px;
+  font-weight: 500;
+  color: white;
+}
+
+#operatorButton {
+  background-color: rgb(68, 115, 202);
+  font-weight: 500;
+  color: white;
+}
+#scientificButton {
+  background-color: rgb(212, 169, 51);
+  font-weight: 500;
+  color: black;
+}
+
+.pedmasButton {
+  background-color: rgb(212, 169, 51);
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  padding: 5px;
+}
