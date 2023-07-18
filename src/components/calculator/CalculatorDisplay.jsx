@@ -17,15 +17,27 @@ const CalculatorDisplay = () => {
   }, []);
 
   const handleInput = (event) => {
-    const inputRegex = /[^1234567890/*\-+.√()]/;
-    const input = event.target.value;
-    if (equalsPressed) {
-      setSavedInput(displayValue);
-      setDisplayValue(input[input.length - 1]);
+    const inputRegex = /[1234567890/*\-+.√()]/;
+    const lastInput = event.key;
+    console.log(event.key, "last input?");
+    if (event.key === "Enter") {
+      setEnterPressed((enterPressed) => enterPressed + 1);
+      setEqualsPressed(true);
+    }
+    if (event.key === "Backspace") {
+      setDisplayValue((currentDisplayValue) =>
+        currentDisplayValue.slice(0, -1)
+      );
+    }
+    if (/[*\-+√]/) {
       setEqualsPressed(false);
     }
-    if (!inputRegex.test(input)) {
-      setDisplayValue(input);
+    if (equalsPressed && /\d/.test(lastInput)) {
+      setSavedInput(displayValue);
+      setDisplayValue(lastInput);
+      setEqualsPressed(false);
+    } else if (inputRegex.test(lastInput)) {
+      setDisplayValue((currentDisplayValue) => currentDisplayValue + lastInput);
     }
   };
 
@@ -46,13 +58,9 @@ const CalculatorDisplay = () => {
   };
 
   console.log(enterPressed, "enterpressed");
+  console.log(equalsPressed, "equalpressed");
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      setEnterPressed((enterPressed) => enterPressed + 1);
-      setEqualsPressed(true);
-    }
-  };
+  const handleKeyDown = (event) => {};
 
   return (
     <section className="calculatorContainer">
@@ -61,8 +69,7 @@ const CalculatorDisplay = () => {
           ref={inputRef}
           placeholder="0"
           value={displayValue}
-          onKeyDown={handleKeyDown}
-          onChange={handleInput}
+          onKeyDown={handleInput}
           type="text"
           onBlur={handleBlur}
         />

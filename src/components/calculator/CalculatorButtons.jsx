@@ -10,11 +10,8 @@ import {
 
 /* Things to add 
 render scientific buttons when in pedmas mode
-drop down or additional part with scientific calc functionality
-THE TYPED NUMBERS AND ENTER AREN'T RESETTING USING EQUALS PRESSED LIKE THE BUTTONS
 move pi to above section
 get the memory working
-work out how to get it to work by typing numbers
 */
 
 const CalculatorButtons = ({
@@ -60,13 +57,10 @@ const CalculatorButtons = ({
 
   const calculateResult = () => {
     let resultStr = calculateParenthesis(displayValue);
-    console.log(resultStr, "after parenthesis calculated");
     if (isPedmas) {
       resultStr = calculateNthrt(resultStr);
       resultStr = calculateExponents(resultStr);
-      console.log(resultStr, "after exponents calculated");
       resultStr = calculateDivisionAndMultiplication(resultStr);
-      console.log(resultStr, "after divmult calculated");
     }
     const resultArr = resultStr.match(/\d+(\.\d+)?|[/*+%-^e√]/g); // matches atleast 1 digit that can be followed by a decimal and at least one additional digit OR an operator
     const toNumbers = resultArr.map((string) => {
