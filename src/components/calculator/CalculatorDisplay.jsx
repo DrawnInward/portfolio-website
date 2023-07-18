@@ -19,7 +19,7 @@ const CalculatorDisplay = () => {
   const handleInput = (event) => {
     const inputRegex = /[1234567890/*\-+.√()]/;
     const lastInput = event.key;
-    console.log(event.key, "last input?");
+    console.log(event.key, "last0 input?");
     if (event.key === "Enter") {
       setEnterPressed((enterPressed) => enterPressed + 1);
       setEqualsPressed(true);
@@ -59,8 +59,6 @@ const CalculatorDisplay = () => {
 
   console.log(enterPressed, "enterpressed");
   console.log(equalsPressed, "equalpressed");
-
-  const handleKeyDown = (event) => {};
 
   return (
     <section className="calculatorContainer">

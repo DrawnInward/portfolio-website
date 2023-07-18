@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 
-export default function () {
+export default function Projects() {
   function CardContainer({
     className,
     ...props
@@ -32,14 +32,14 @@ export default function () {
   }
 
   return (
-    <>
-      <CardContainer>
-        <Card className="w-[350px]">
+    <div className="flex flex-col items-center justify-center space-y-4">
+      <CardContainer className="w-full sm:w-96 md:w-128 lg:w-160 xl:w-192">
+        <Card>
           <CardHeader>
             <CardTitle>Twodemi</CardTitle>
             <CardDescription>
-              A collaborative project to create an interactive e-learning
-              platform that connects teachers and students.
+              An interactive e-learning platform that connects teachers and
+              students.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -78,13 +78,13 @@ export default function () {
           </CardFooter>
         </Card>
       </CardContainer>
-      <CardContainer>
-        <Card className="w-[350px]">
+      <CardContainer className="w-full sm:w-96 md:w-128 lg:w-160 xl:w-192">
+        <Card>
           <CardHeader>
             <CardTitle>Play Rate Share</CardTitle>
             <CardDescription>
-              A solo project to create an interactive platform where people can
-              review, rate, and discuss board games.
+              An platform where people can review, rate, and discuss board
+              games.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -119,8 +119,8 @@ export default function () {
           </CardFooter>
         </Card>
       </CardContainer>
-      <CardContainer>
-        <Card className="w-[350px]">
+      <CardContainer className="w-full sm:w-96 md:w-128 lg:w-160 xl:w-192">
+        <Card>
           <CardHeader>
             <CardTitle>Calculator</CardTitle>
             <CardDescription>
@@ -130,13 +130,11 @@ export default function () {
           </CardHeader>
           <CardContent>
             <Link to="/projects/calculator">
-              <Link to="/projects/calculator">
-                <img
-                  src="https://i.imgur.com/E170VNY.png"
-                  alt="a calculator application"
-                  style={{ width: "400px", height: "300px" }}
-                />
-              </Link>
+              <img
+                src="https://i.imgur.com/E170VNY.png"
+                alt="a calculator application"
+                style={{ width: "400px", height: "300px" }}
+              />
             </Link>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
@@ -161,8 +159,8 @@ export default function () {
           </CardFooter>
         </Card>
       </CardContainer>
-      <CardContainer>
-        <Card className="w-[350px]">
+      <CardContainer className="w-full sm:w-96 md:w-128 lg:w-160 xl:w-192">
+        <Card>
           <CardHeader>
             <CardTitle>Noughts And Crosses</CardTitle>
             <CardDescription>
@@ -200,6 +198,6 @@ export default function () {
           </CardFooter>
         </Card>
       </CardContainer>
-    </>
+    </div>
   );
 }
